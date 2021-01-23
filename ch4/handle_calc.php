@@ -28,8 +28,7 @@
     $total -= $discount;
 
     //定义税率
-    //$taxrate = $tax/100;
-    $taxrate /= 100;
+    $taxrate = $tax/100;
     //$taxrate = $taxrate + 1;
     //使用自增
     $taxrate++;
