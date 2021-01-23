@@ -11,10 +11,13 @@
     <p>Fill out this form to calclate the toltal cost:</p>
     
     <form action="handle_calc.php" method="post">
+        <!--这个form标签代表html表单开始，action属性说明表单数据将被提交给
+        handle_calc.php这个页面。方法为post-->
         <p>Price: <input type="text" name="price" size="5" /></p>
         <p>Quantity: <input type="text" name="quantity" size="5" /></p>
         <p>Discount: <input type="text" name="discount" size="5" /></p>
         <p>Tax: <input type="text" name="tax" size="3" /> (%) </p>
+        <!--html不提供数值输入类型，上为创建文本框供值的输入-->
         <p>Shipping method: 
             <select name="shipping">
                 <option value="5.00">Slow and steady</option>
