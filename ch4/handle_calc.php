@@ -34,6 +34,10 @@
     //计算月付款数额
     $monthly = $total / $payments;
 
+    //格式化数值，保留2位小数
+    $total = number_format($total,2);
+    $monthly = number_format($monthly,2);
+
     //打印结果
     print "<p>You have selected to purchase:<br/>
     <span class =\"number\">$quantity </span> widget(s) at <br/>
