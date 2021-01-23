@@ -21,18 +21,26 @@
 
     //计算总额
     $total = $price * $quantity;
-    $total = $total + $shipping;
-    $total = $total - $discount;
+    //$total = $total + $shipping;
+    //$total = $total - $discount;
+    //使用简略运算赋值语句
+    $total += $shipping;
+    $total -= $discount;
 
     //定义税率
-    $taxrate = $tax/100;
-    $taxrate = $taxrate + 1;
+    //$taxrate = $tax/100;
+    $taxrate /= 100;
+    //$taxrate = $taxrate + 1;
+    //使用自增
+    $taxrate++;
 
     //纳入税率后的总成本
     $total = $total * $taxrate;
 
     //计算月付款数额
     $monthly = $total / $payments;
+    //可以直接用括号一次性计算完，不过我认为这样会可读性较差
+    //例如：$total = ($price * $quantity + $shipping - $discount) * (($tax/100)+1)
 
     //格式化数值，保留2位小数
     $total = number_format($total,2);
