@@ -12,12 +12,11 @@
 
 $first_name = $_POST['first_name'];
 $last_name = $_POST['last_name'];
-$posting = $_POST['posting'];
+$posting = nl2br($_POST['posting']);
 
 $name = $first_name . ' ' . $last_name;
 
-print "<div>Thank you, $name, for your posting:
-    <p>$posting</p></div>";
+print "<div>Thank you, $name, for your posting:<p>$posting</p></div>";
 
 ?>
     
