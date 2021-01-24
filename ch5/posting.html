@@ -1,4 +1,4 @@
-<!--向php脚本传输字符串数据-->
+<!--向php脚本handle_post传输字符串数据-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +18,8 @@
         <p>Email Address: <input type="text" name="email" size="30"/></p>
 
         <p>Posting: <textarea name="posting" cols="30" rows="9"></textarea></p>
-
+        <!--由于要传递给php脚本，所以所有name值必须符合php的变量命名标准：-->
+        <!--不能以空格数字开头，只能是字母数字和下划线的组合-->
         <input type="submit" name="submit" value="Send My Posting"/>
     </form>
 </div>
