@@ -16,6 +16,13 @@ $posting = nl2br($_POST['posting']);
 
 $name = $first_name . ' ' . $last_name;
 
+
+//str_word_count()计算单词数量 
+$words = str_word_count($posting);
+
+//将发送的内容截断一部分,允许50个字符
+$posting = substr($posting,0,50);
+
 //$html_post = nl2br(htmlentities($_POST['posting']));
 //$strip_post = nl2br(strip_tags($_POST['posting']));
 //两个处理php字符串变量中的HTML标签的函数
@@ -30,7 +37,8 @@ $name = $first_name . ' ' . $last_name;
 //下为urlencode版本,urlencode()函数可以通过url安全地将数据传输到php脚本
 print "<div>
 Thank you, $name, for your posting:
-    <p>$posting</p>
+    <p>$posting..</p>
+    <p>($words words)</p>
 </div>";
 
 //创建连接另一页面的链接
