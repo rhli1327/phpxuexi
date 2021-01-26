@@ -10,9 +10,11 @@
 //从posting.html接收5个值
 //first_name, last_name, email, posting, submit
 
-$first_name = $_POST['first_name'];
-$last_name = $_POST['last_name'];
-$posting = nl2br($_POST['posting']);
+//trim()去掉多余的空格 仅去掉开头和结尾的空格
+//还有rtrim和ltrim用于分别去掉开头结尾
+$first_name = trim($_POST['first_name']);
+$last_name = trim($_POST['last_name']);
+$posting = trim($_POST['posting']);
 
 $name = $first_name . ' ' . $last_name;
 
@@ -21,7 +23,10 @@ $name = $first_name . ' ' . $last_name;
 $words = str_word_count($posting);
 
 //将发送的内容截断一部分,允许50个字符
-$posting = substr($posting,0,50);
+//$posting = substr($posting,0,50);
+
+//将badword 替换为星号
+$posting = str_ireplace('badword','*****',$posting);
 
 //$html_post = nl2br(htmlentities($_POST['posting']));
 //$strip_post = nl2br(strip_tags($_POST['posting']));
