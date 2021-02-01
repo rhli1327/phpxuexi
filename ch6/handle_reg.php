@@ -43,8 +43,8 @@ else
 }
 if ($okay)
 {
-    print 'You have been successfully registered';
-    print "You will turn $age this year.";
+    print '<p>You have been successfully registered</p>';
+    print "<p>You will turn $age this year.</p>";
 }
 
 
