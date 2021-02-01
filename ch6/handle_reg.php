@@ -57,7 +57,7 @@ if ($_POST['year'] > 2021)
 }*/
 
 //验证年
-if (is_numeric($_POST['year']) AND (strlen($_POST['year'] == 4)))
+if (is_numeric($_POST['year']) AND (strlen($_POST['year']) == 4))
 {
     //检查出生年是否在2021前
     if ($_POST['year'] < 2021)
@@ -84,10 +84,32 @@ if(!isset($_POST['terms']) AND ($_POST['terms'] == 'Yes'))
     $okay=false;
 }
 
+//检查颜色
+switch ($_POST['color'])
+{
+    case 'red':
+        $color_type = 'primary';
+        break;
+    case 'yellow':
+        $color_type = 'prymary';
+        break;
+    case 'green':
+        $color_type = 'secondary';
+        break;
+    case 'blue':
+        $color_type = 'primary';
+        break;
+    default:
+        print '<p class = "error">Please select your favorite color.</p>';
+        $okay = FALSE;
+        break;
+}
+
 if ($okay)
 {
     print '<p>You have been successfully registered.</p>';
     print "<p>You will turn $age this year.</p>";
+    print "<p>Your favorite color is a $color_type color.</p>";
 }
 
 
