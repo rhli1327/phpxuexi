@@ -30,10 +30,24 @@ if(empty($_POST['password']))
     $okay = false;
 }
 
+//验证出生年
+if (is_numeric($_POST['year']))
+{
+    $age = 2021 - $_POST['year'];
+}
+else
+{
+    print '<p class = "error">Please enter the year you were born as
+    four digits</p>';
+    $okay = false;
+}
 if ($okay)
 {
     print 'You have been successfully registered';
+    print "You will turn $age this year.";
 }
+
+
 ?>
 </body>
 </html>
