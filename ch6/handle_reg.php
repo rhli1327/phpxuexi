@@ -41,9 +41,10 @@ else
     four digits</p>';
     $okay = false;
 }
+
 if ($okay)
 {
-    print '<p>You have been successfully registered</p>';
+    print '<p>You have been successfully registered.</p>';
     print "<p>You will turn $age this year.</p>";
 }
 
