@@ -1,0 +1,24 @@
+1.empty()和isset()的区别
+empty($var)：当$var存在且非空非0时，返回FALSE，否则返回TRUE。
+例如 0 "0" " "都会被认为是空返回TRUE $var为声明也会返回TRUE。
+isset($var):只要$var存在并且值不是NULL就会返回TRUE，否则返回FALSE。
+空字符串也会是TRUE。
+is_numeric($var) 如果$var是数字和数字字符串则返回TRUE，否则返回FALSE。
+从PHP手册网摘抄下很有用的一段
+If you want the numerical value of a string, this will return a float or int value:
+（如果想把一个数字字符串转化为数字，这个函数很有用）
+<?php
+function get_numeric($val) {
+  if (is_numeric($val)) {
+    return $val + 0;
+  }
+  return 0;
+}
+?>
+
+Example:
+<?php
+get_numeric('3'); // int(3)
+get_numeric('1.2'); // float(1.2)
+get_numeric('3.0'); // float(3)
+?>
