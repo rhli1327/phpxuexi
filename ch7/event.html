@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!-- 用数组处理多选框名称 -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add an Event</title>
+</head>
+<body>
+<div>
+<p>Use this form to add an event:</p>
+
+<form action="event.php" method="POST">
+    <p>Event Name: <input type="text" name="name" size="30"></p>
+    <p>Event Days:
+        <input type="checkbox" name="weekdays[ ]" value="Sunday">
+        <input type="checkbox" name="weekdays[ ]" value="Monday">
+        <input type="checkbox" name="weekdays[ ]" value="Tuesday">
+        <input type="checkbox" name="weekdays[ ]" value="Wednesday">
+        <input type="checkbox" name="weekdays[ ]" value="Thursday">
+        <input type="checkbox" name="weekdays[ ]" value="Friday">
+        <input type="checkbox" name="weekdays[ ]" value="Saturday">
+    </p>
+
+    <input type="submit" name="sumbit" value="Add the Event!">
+</form>
+
+</div>
+</body>
+</html>
