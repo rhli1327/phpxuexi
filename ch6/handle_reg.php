@@ -6,6 +6,10 @@
     <title>Registration</title>
     <style type="text/css" media="screen">
     .error { color:red; }
+    .red { color:red;}
+    .blue {color:blue;}
+    .green {color:green;}
+    .yellow {color: yellow;}
 </style>
 </head>
 <body>
@@ -72,8 +76,7 @@ if (is_numeric($_POST['year']) AND (strlen($_POST['year']) == 4))
 }
 else
 {
-    print '<p class = "error">Please enter the year you were born as
-    four digits</p>';
+    print '<p class = "error">Please select the year you were born.</p>';
     $okay = false;
 }
 
@@ -88,16 +91,16 @@ if(!isset($_POST['terms']) AND ($_POST['terms'] == 'Yes'))
 switch ($_POST['color'])
 {
     case 'red':
-        $color_type = 'primary';
+        $color_type = '<i class = "red">primary</i>';
         break;
     case 'yellow':
-        $color_type = 'prymary';
+        $color_type = '<i class = "yellow">prymary</i>';
         break;
     case 'green':
-        $color_type = 'secondary';
+        $color_type = '<i class = "green">secondary</i>';
         break;
     case 'blue':
-        $color_type = 'primary';
+        $color_type = '<i class = "blue">primary</i>';
         break;
     default:
         print '<p class = "error">Please select your favorite color.</p>';
@@ -107,9 +110,14 @@ switch ($_POST['color'])
 
 if ($okay)
 {
+    $year = $_POST['year'];
+    $day = $_POST['day'];
+    $month = $_POST['month'];
+    $birthday = $month . '/'.$day.'/'.$year;
     print '<p>You have been successfully registered.</p>';
     print "<p>You will turn $age this year.</p>";
     print "<p>Your favorite color is a $color_type color.</p>";
+    print "<p>Your birthday is $birthday</p>";
 }
 
 
