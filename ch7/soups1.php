@@ -27,6 +27,11 @@
     
     // print "<p>$soups</p>";
     print_r ($soups);
+
+    foreach($soups as $day => $soup)
+    {
+        print "<p>$day: $soup</p>\n";
+    }
 ?>
 </body>
 </html>
