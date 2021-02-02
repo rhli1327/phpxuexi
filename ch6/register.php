@@ -42,6 +42,14 @@
                     }
                     ?>
                 </select>
+                <select name="year">
+                    <option value="">Year</option>
+                    <?php
+                    for ($j = 1900; $j <= (date('Y')); $j++) {
+                        print "<option value=\"$j\">$j</option>\n";
+                    }
+                    ?>
+                </select>
             </p>
 
             <p>
