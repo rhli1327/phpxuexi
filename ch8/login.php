@@ -12,7 +12,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ((!empty($_POST['email'])) && (!empty($_POST['password']))) {
         
         if ((strtolower($_POST['email']) == '1@3') && ($_POST['password'] == '1')) {
-            print '<p>You are logged in!<br/>Now you can fuck the author</p>';
+            
+            //将用户重定向到其他页面
+            ob_end_clean();//清空缓冲
+            header ('Location:welcome.php');
+            exit();
+
         } else {
             //不相等
             print '<p>Wrong</p>';
