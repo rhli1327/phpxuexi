@@ -21,7 +21,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $problem = TRUE;
         print '<p class = "error">Please enter your last name </p>';
     }
-    if (empty($_POST['email'])){
+    if (empty($_POST['email']) || (substr_count($_POST['email'],'@')!=1)){
         $problem = TRUE;
         print '<p class = "error">Please enter your email </p>';
     }
@@ -37,6 +37,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         // 判断是否有错误发生
         print '<p>注册成功 </p>';
 
+        // 发生email
+        $body = "注册成功。你的密码是{$_POST['password1']}";
+        mail($_POST['email'],'注册确认',$body,'From:1@2');
+        
         //清除数组中的元素
         $_POST = array();
     }else{
